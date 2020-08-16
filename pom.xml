@@ -2,11 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.funny.trade</groupId>
-    <artifactId>trade-center</artifactId>
+    <groupId>com.autohome.trade</groupId>
+    <artifactId>trade-order</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
-    <name>trade-center</name>
+    <name>${project.artifactId}</name>
 
     <properties>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -16,19 +16,15 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mybatis-starter.version>1.3.1</mybatis-starter.version>
         <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
-        <cola.framework.version>2.0.0</cola.framework.version>
+        <cola.framework.version>3.0.0</cola.framework.version>
     </properties>
 
     <modules>
-        <module>trade-client</module>
-        <module>trade-controller</module>
-        <module>trade-app</module>
-        <module>trade-domain</module>
-        <module>trade-infrastructure</module>
-        <module>user-model</module>
-        <module>user-service-1</module>
-        <module>user-service-2</module>
-        <module>order-service</module>
+        <module>trade-order-client</module>
+        <module>trade-order-controller</module>
+        <module>trade-order-app</module>
+        <module>trade-order-domain</module>
+        <module>trade-order-infrastructure</module>
         <module>start</module>
     </modules>
 
@@ -36,40 +32,40 @@
         <dependencies>
             <!--Framework-->
             <dependency>
-                <groupId>com.alibaba.cola</groupId>
+                <groupId>com.aliyun</groupId>
                 <artifactId>cola-common</artifactId>
                 <version>${cola.framework.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.alibaba.cola</groupId>
+                <groupId>com.aliyun</groupId>
                 <artifactId>cola-core</artifactId>
                 <version>${cola.framework.version}</version>
             </dependency>
             <!--Framework End-->
             <!--Project modules-->
             <dependency>
-                <groupId>com.funny.trade</groupId>
-                <artifactId>trade-controller</artifactId>
+                <groupId>com.autohome.trade</groupId>
+                <artifactId>trade-order-controller</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.funny.trade</groupId>
-                <artifactId>trade-client</artifactId>
+                <groupId>com.autohome.trade</groupId>
+                <artifactId>trade-order-client</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.funny.trade</groupId>
-                <artifactId>trade-app</artifactId>
+                <groupId>com.autohome.trade</groupId>
+                <artifactId>trade-order-app</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.funny.trade</groupId>
-                <artifactId>trade-domain</artifactId>
+                <groupId>com.autohome.trade</groupId>
+                <artifactId>trade-order-domain</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.funny.trade</groupId>
-                <artifactId>trade-infrastructure</artifactId>
+                <groupId>com.autohome.trade</groupId>
+                <artifactId>trade-order-infrastructure</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <!--Project modules End-->
@@ -96,7 +92,7 @@
             <dependency>
                 <groupId>org.hibernate.validator</groupId>
                 <artifactId>hibernate-validator</artifactId>
-                <version>6.0.7.Final</version>
+                <version>6.0.20.Final</version>
             </dependency>
             <dependency>
                 <groupId>javax.el</groupId>
@@ -110,6 +106,12 @@
             </dependency>
             <!--Validation API End -->
             <!-- Misc -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.12</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections</artifactId>
@@ -128,7 +130,12 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.68</version>
+                <version>1.2.70</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.9</version>
             </dependency>
             <!-- Misc End -->
         </dependencies>
