@@ -1,7 +1,7 @@
 package com.alibaba.craftsman.common.event;
 
-import com.alibaba.cola.event.DomainEventI;
-import com.alibaba.cola.event.EventBusI;
+import com.funny.combo.core.event.DomainEventI;
+import com.funny.combo.core.event.EventBusI;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

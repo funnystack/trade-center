@@ -1,7 +1,6 @@
 package com.alibaba.craftsman.dto;
 
-import com.alibaba.cola.dto.Command;
-import lombok.Data;
+import com.funny.combo.core.dto.AbstractCommand;
 
 /**
  * 整个应用通用的Command
@@ -9,7 +8,7 @@ import lombok.Data;
  * @author Frank Zhang
  * @date 2019-02-28 7:18 PM
  */
-public class CommonCommand extends Command{
+public class CommonCommand extends AbstractCommand {
     private String operater;
     private boolean needsOperator;
 

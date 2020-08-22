@@ -1,10 +1,10 @@
 package com.alibaba.craftsman.api;
 
-import com.alibaba.cola.dto.MultiResponse;
-import com.alibaba.cola.dto.Response;
-import com.alibaba.cola.dto.SingleResponse;
 import com.alibaba.craftsman.dto.*;
 import com.alibaba.craftsman.dto.clientobject.UserProfileCO;
+import com.funny.combo.core.result.MultiResponse;
+import com.funny.combo.core.result.Response;
+import com.funny.combo.core.result.SingleResponse;
 
 
 /**

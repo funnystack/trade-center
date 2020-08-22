@@ -1,10 +1,10 @@
 package com.alibaba.craftsman.command.query;
 
-import com.alibaba.cola.dto.SingleResponse;
 import com.alibaba.craftsman.dto.UserProfileGetQry;
 import com.alibaba.craftsman.dto.clientobject.UserProfileCO;
 import com.alibaba.craftsman.gatewayimpl.database.UserProfileMapper;
 import com.alibaba.craftsman.gatewayimpl.database.dataobject.UserProfileDO;
+import com.funny.combo.core.result.SingleResponse;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

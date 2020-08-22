@@ -1,7 +1,7 @@
 package com.alibaba.craftsman.common.exception;
 
 
-import com.alibaba.cola.dto.ErrorCodeI;
+import com.funny.combo.core.common.ErrorCodeI;
 
 /**
  * ErrorCode

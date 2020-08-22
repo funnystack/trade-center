@@ -1,8 +1,8 @@
 package com.alibaba.craftsman;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,7 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  * @author Frank Zhang
  */
-@SpringBootApplication(scanBasePackages = {"com.alibaba.craftsman","com.alibaba.cola"})
+@SpringBootApplication(scanBasePackages = {"com.alibaba.craftsman","com.funny.combo"})
 @MapperScan("com.alibaba.craftsman.gatewayimpl.database")
 public class Application {
 

@@ -1,9 +1,9 @@
 package com.alibaba.craftsman.domain.metrics.appquality;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.craftsman.domain.metrics.MetricItem;
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Data
 public class AppMetricItem extends MetricItem {

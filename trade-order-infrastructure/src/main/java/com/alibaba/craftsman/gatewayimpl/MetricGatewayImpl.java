@@ -1,8 +1,7 @@
 package com.alibaba.craftsman.gatewayimpl;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.craftsman.common.event.DomainEventPublisher;
+import com.alibaba.craftsman.convertor.MetricConvertor;
 import com.alibaba.craftsman.domain.gateway.MetricGateway;
 import com.alibaba.craftsman.domain.metrics.MainMetricType;
 import com.alibaba.craftsman.domain.metrics.MetricItem;
@@ -21,7 +20,8 @@ import com.alibaba.craftsman.gatewayimpl.rpc.AppMetricMapper;
 import com.alibaba.craftsman.gatewayimpl.rpc.BugMetricMapper;
 import com.alibaba.craftsman.gatewayimpl.rpc.dataobject.AppMetricDO;
 import com.alibaba.craftsman.gatewayimpl.rpc.dataobject.BugMetricDO;
-import com.alibaba.craftsman.convertor.MetricConvertor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

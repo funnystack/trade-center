@@ -1,18 +1,15 @@
 package com.alibaba.craftsman.config;
 
-import com.alibaba.cola.boot.SpringBootstrap;
+import com.funny.combo.core.boot.SpringBootstrap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Configuration for COLA framework
  */
 @Configuration
-@ComponentScan(value = {"com.alibaba.cola","com.alibaba.craftsman"})
+@ComponentScan(value = {"com.funny.combo","com.alibaba.craftsman"})
 public class ColaConfig {
 
     @Bean(initMethod = "init")

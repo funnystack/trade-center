@@ -1,12 +1,12 @@
 package com.alibaba.craftsman.service;
 
-import com.alibaba.cola.dto.MultiResponse;
-import com.alibaba.cola.dto.Response;
 import com.alibaba.craftsman.api.MetricsServiceI;
 import com.alibaba.craftsman.command.*;
 import com.alibaba.craftsman.command.query.ATAMetricQryExe;
 import com.alibaba.craftsman.dto.*;
 import com.alibaba.craftsman.dto.clientobject.ATAMetricCO;
+import com.funny.combo.core.result.MultiResponse;
+import com.funny.combo.core.result.Response;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

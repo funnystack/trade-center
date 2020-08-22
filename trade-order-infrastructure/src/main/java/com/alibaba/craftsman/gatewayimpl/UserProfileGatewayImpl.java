@@ -1,7 +1,5 @@
 package com.alibaba.craftsman.gatewayimpl;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.craftsman.convertor.UserProfileConvertor;
 import com.alibaba.craftsman.domain.DomainFactory;
 import com.alibaba.craftsman.domain.gateway.UserProfileGateway;
@@ -11,6 +9,8 @@ import com.alibaba.craftsman.domain.user.Role;
 import com.alibaba.craftsman.domain.user.UserProfile;
 import com.alibaba.craftsman.gatewayimpl.database.UserProfileMapper;
 import com.alibaba.craftsman.gatewayimpl.database.dataobject.UserProfileDO;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 

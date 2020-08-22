@@ -12,8 +12,8 @@
 	<dependencies>
 		<!-- COLA Framework -->
 		<dependency>
-			<groupId>com.aliyun</groupId>
-			<artifactId>cola-core</artifactId>
+			<groupId>com.funny.combo</groupId>
+			<artifactId>combo-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.autohome.trade</groupId>

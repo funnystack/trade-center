@@ -1,13 +1,13 @@
 package com.alibaba.craftsman.command;
 
-import com.alibaba.cola.dto.Response;
+import com.alibaba.craftsman.domain.gateway.MetricGateway;
 import com.alibaba.craftsman.domain.metrics.techcontribution.ContributionMetric;
 import com.alibaba.craftsman.domain.metrics.techcontribution.RefactoringLevel;
 import com.alibaba.craftsman.domain.metrics.techcontribution.RefactoringMetric;
 import com.alibaba.craftsman.domain.metrics.techcontribution.RefactoringMetricItem;
 import com.alibaba.craftsman.domain.user.UserProfile;
 import com.alibaba.craftsman.dto.RefactoringMetricAddCmd;
-import com.alibaba.craftsman.domain.gateway.MetricGateway;
+import com.funny.combo.core.result.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

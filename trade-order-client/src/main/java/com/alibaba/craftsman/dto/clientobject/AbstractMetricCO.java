@@ -1,6 +1,6 @@
 package com.alibaba.craftsman.dto.clientobject;
 
-import com.alibaba.cola.dto.ClientObject;
+import com.funny.combo.core.dto.AbstractClient;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
@@ -12,7 +12,7 @@ import javax.validation.constraints.NotEmpty;
  * @date 2019-03-04 11:32 AM
  */
 @Data
-public abstract class AbstractMetricCO extends ClientObject{
+public abstract class AbstractMetricCO extends AbstractClient {
     /**
      * The ownerId of this Metric Item
      */

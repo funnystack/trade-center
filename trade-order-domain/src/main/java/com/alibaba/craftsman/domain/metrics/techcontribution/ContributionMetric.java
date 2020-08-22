@@ -1,11 +1,11 @@
 package com.alibaba.craftsman.domain.metrics.techcontribution;
 
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.craftsman.domain.metrics.MainMetric;
 import com.alibaba.craftsman.domain.metrics.MainMetricType;
 import com.alibaba.craftsman.domain.user.UserProfile;
 import lombok.Data;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ContributionMetric

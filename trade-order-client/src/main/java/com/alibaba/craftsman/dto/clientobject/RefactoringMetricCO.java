@@ -1,6 +1,5 @@
 package com.alibaba.craftsman.dto.clientobject;
 
-import com.alibaba.cola.dto.ClientObject;
 import lombok.Data;
 
 /**

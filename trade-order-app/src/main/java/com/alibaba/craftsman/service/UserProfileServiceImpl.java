@@ -1,8 +1,5 @@
 package com.alibaba.craftsman.service;
 
-import com.alibaba.cola.dto.MultiResponse;
-import com.alibaba.cola.dto.Response;
-import com.alibaba.cola.dto.SingleResponse;
 import com.alibaba.craftsman.api.UserProfileServiceI;
 import com.alibaba.craftsman.command.RefreshScoreCmdExe;
 import com.alibaba.craftsman.command.UserProfileAddCmdExe;
@@ -11,6 +8,9 @@ import com.alibaba.craftsman.command.query.UserProfileGetQryExe;
 import com.alibaba.craftsman.command.query.UserProfileListQryExe;
 import com.alibaba.craftsman.dto.*;
 import com.alibaba.craftsman.dto.clientobject.UserProfileCO;
+import com.funny.combo.core.result.MultiResponse;
+import com.funny.combo.core.result.Response;
+import com.funny.combo.core.result.SingleResponse;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

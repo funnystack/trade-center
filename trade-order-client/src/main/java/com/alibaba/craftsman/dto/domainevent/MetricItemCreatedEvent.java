@@ -1,6 +1,6 @@
 package com.alibaba.craftsman.dto.domainevent;
 
-import com.alibaba.cola.event.DomainEventI;
+import com.funny.combo.core.event.DomainEventI;
 import lombok.Data;
 
 @Data

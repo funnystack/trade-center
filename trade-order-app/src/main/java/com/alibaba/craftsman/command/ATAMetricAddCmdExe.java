@@ -1,12 +1,12 @@
 package com.alibaba.craftsman.command;
 
-import com.alibaba.cola.dto.Response;
+import com.alibaba.craftsman.domain.gateway.MetricGateway;
 import com.alibaba.craftsman.domain.metrics.techinfluence.ATAMetric;
 import com.alibaba.craftsman.domain.metrics.techinfluence.ATAMetricItem;
 import com.alibaba.craftsman.domain.metrics.techinfluence.InfluenceMetric;
 import com.alibaba.craftsman.domain.user.UserProfile;
 import com.alibaba.craftsman.dto.ATAMetricAddCmd;
-import com.alibaba.craftsman.domain.gateway.MetricGateway;
+import com.funny.combo.core.result.Response;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

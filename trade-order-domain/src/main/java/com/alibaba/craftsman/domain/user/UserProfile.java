@@ -1,16 +1,15 @@
 package com.alibaba.craftsman.domain.user;
 
-import com.alibaba.cola.domain.EntityObject;
-import com.alibaba.cola.exception.Assert;
-import com.alibaba.cola.logger.Logger;
-import com.alibaba.cola.logger.LoggerFactory;
 import com.alibaba.craftsman.domain.metrics.appquality.AppQualityMetric;
 import com.alibaba.craftsman.domain.metrics.devquality.DevQualityMetric;
-import com.alibaba.craftsman.domain.metrics.weight.Weight;
 import com.alibaba.craftsman.domain.metrics.techcontribution.ContributionMetric;
 import com.alibaba.craftsman.domain.metrics.techinfluence.InfluenceMetric;
+import com.alibaba.craftsman.domain.metrics.weight.Weight;
+import com.funny.combo.core.domain.EntityObject;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 员工档案
@@ -18,7 +17,7 @@ import lombok.NoArgsConstructor;
  */
 @Data
 @NoArgsConstructor
-public class UserProfile extends EntityObject{
+public class UserProfile extends EntityObject {
     private static Logger logger = LoggerFactory.getLogger(UserProfile.class);
 
     private String id;
@@ -52,22 +51,18 @@ public class UserProfile extends EntityObject{
     }
 
     private void calculateAppQualityMetric() {
-        Assert.notNull(appQualityMetric, "appQualityMetric is null, initialize it before calculating");
         appQualityScore = appQualityMetric.calculateScore();
     }
 
     private void calculateDevQualityMetric(){
-        Assert.notNull(devQualityMetric, "devQualityMetric is null, initialize it before calculating");
         devQualityScore = devQualityMetric.calculateScore();
     }
 
     private void calculateTechInfluenceScore(){
-        Assert.notNull(devQualityMetric, "influenceMetric is null, initialize it before calculating");
         techInfluenceScore = influenceMetric.calculateScore();
     }
 
     private void calculateTechContributionScore(){
-        Assert.notNull(devQualityMetric, "contributionMetric is null, initialize it before calculating");
         techContributionScore = contributionMetric.calculateScore();
     }
 

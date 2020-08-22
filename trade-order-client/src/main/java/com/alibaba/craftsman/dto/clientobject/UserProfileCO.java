@@ -1,12 +1,12 @@
 package com.alibaba.craftsman.dto.clientobject;
 
-import com.alibaba.cola.dto.ClientObject;
+import com.funny.combo.core.dto.AbstractClient;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
 
 @Data
-public class UserProfileCO extends ClientObject {
+public class UserProfileCO extends AbstractClient {
 
     public final static String IS_MANAGER = "y";
     public final static String IS_NOT_MANAGER = "n";
