@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
         <groupId>com.autohome.trade</groupId>
@@ -33,15 +34,29 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <artifactId>maven-deploy-plugin</artifactId>
-                    <configuration>
-                        <skip>true</skip>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.funny.combo</groupId>
+                <artifactId>combo-codegen-plugin</artifactId>
+                <version>${combo.framework.version}</version>
+                <configuration>
+                    <jdbcDriver>com.mysql.cj.jdbc.Driver</jdbcDriver>
+                    <jdbcURL>jdbc:mysql://127.0.0.1:3306/trade</jdbcURL>
+                    <jdbcUserId>root</jdbcUserId>
+                    <jdbcPassword>root</jdbcPassword>
+                    <projectDirectory>${project.basedir}</projectDirectory>
+                    <packageName>com.funny.trade</packageName>
+                    <moduleName>user</moduleName>
+                    <tableNames>shopping_cart</tableNames>
+                    <ignorePeffix>ERP,CC</ignorePeffix>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
