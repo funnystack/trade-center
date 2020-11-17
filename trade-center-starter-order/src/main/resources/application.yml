@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: @activatedProperties@
+  application:
+    name: user-api
+
+
+combo:
+  encrypt:
+    model: local
+    appId: trade-user
