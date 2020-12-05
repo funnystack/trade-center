@@ -1,6 +1,5 @@
 package com.funny.trade.gatewayimpl;
 
-import com.funny.trade.domain.DomainFactory;
 import com.funny.trade.domain.gateway.UserProfileGateway;
 import com.funny.trade.domain.metrics.techcontribution.ContributionMetric;
 import com.funny.trade.domain.metrics.weight.WeightFactory;

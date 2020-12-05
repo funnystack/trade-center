@@ -20,6 +20,10 @@
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>com.funny.combo</groupId>
+			<artifactId>combo-encrypt-starter</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
