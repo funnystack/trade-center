@@ -1,7 +1,7 @@
 package com.funny.trade.convertor;
 
 
-import com.funny.trade.domain.metrics.MetricItem;
+import com.funny.trade.domain.order.entity.OrderDataEntity;
 import com.funny.trade.gatewayimpl.database.dataobject.MetricDO;
 
 /**
@@ -9,12 +9,8 @@ import com.funny.trade.gatewayimpl.database.dataobject.MetricDO;
  */
 public class MetricConvertor{
 
-    public static MetricDO toDataObject(MetricItem metricItem){
+    public static MetricDO toDataObject(OrderDataEntity orderDataEntity){
         MetricDO metricDO = new MetricDO();
-        metricDO.setUserId(metricItem.getMetricOwner().getUserId());
-        metricDO.setMainMetric(metricItem.getSubMetric().getParent().getCode());
-        metricDO.setSubMetric(metricItem.getSubMetric().getCode());
-        metricDO.setMetricItem(metricItem.toJsonString());
         return metricDO;
     }
 

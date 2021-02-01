@@ -1,14 +1,6 @@
 package com.funny.trade.domain;
 
-import com.funny.trade.domain.metrics.techinfluence.InfluenceMetric;
-import com.funny.trade.domain.metrics.techinfluence.SharingMetric;
-import com.funny.trade.domain.metrics.techinfluence.SharingMetricItem;
-import com.funny.trade.domain.metrics.techinfluence.SharingScope;
-import com.funny.trade.domain.user.UserProfile;
-import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.Date;
 
 /**
  * SharingMetricTest
@@ -20,12 +12,6 @@ public class SharingMetricTest {
 
     @Test
     public void testSharingMetric(){
-        SharingMetric sharingMetric = new SharingMetric(new InfluenceMetric(new UserProfile()));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.TEAM, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.BU, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.ALIBABA, new Date(), "sharingLink"));
-        sharingMetric.addMetricItem(new SharingMetricItem("title", SharingScope.COMMUNITY, new Date(), "sharingLink"));
 
-        Assert.assertEquals(92, sharingMetric.calculateScore(), 0.01);
     }
 }
