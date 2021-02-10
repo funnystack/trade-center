@@ -2,7 +2,7 @@ package com.funny.trade.domain.order;
 
 import com.funny.combo.core.exception.BizException;
 import com.funny.trade.domain.order.entity.OrderDataEntity;
-import com.funny.trade.domain.order.enums.OrderOperateTypeEnum;
+import com.funny.trade.domain.order.enums.OrderEventEnum;
 import com.funny.trade.domain.order.enums.OrderStatusEnum;
 import org.apache.commons.lang3.StringUtils;
 
@@ -27,7 +27,7 @@ public class OrderData extends OrderDataEntity {
         subOrder.setIsDel(1);
         subOrder.setRefundStatus(0);
 
-        OrderOperateLog log = OrderOperateLog.buildOperateLog(getOrderId(), OrderOperateTypeEnum.DELETE.getKey(),
+        OrderOperateLog log = OrderOperateLog.buildOperateLog(getOrderId(), OrderEventEnum.DELETE.getKey(),
                 OrderStatusEnum.WAIT_PAY.getValue(), OrderStatusEnum.CLOSED.getValue(),
                 "sys_worker", 1, "");
 

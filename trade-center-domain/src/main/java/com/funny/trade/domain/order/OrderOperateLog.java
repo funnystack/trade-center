@@ -1,7 +1,8 @@
 package com.funny.trade.domain.order;
 
 import com.funny.trade.domain.order.entity.OrderOperateLogEntity;
-import com.funny.trade.domain.order.enums.OrderOperateTypeEnum;
+import com.funny.trade.domain.order.enums.OperateUserTypeEnum;
+import com.funny.trade.domain.order.enums.OrderEventEnum;
 import org.apache.commons.lang3.StringUtils;
 
 /**
@@ -11,19 +12,17 @@ public class OrderOperateLog extends OrderOperateLogEntity {
     /**
      * 组装orderOperateLog
      */
-    public static OrderOperateLog buildOperateLog(String orderId, Integer opLogType, String curStatus, String newStatus,
-                                                  String opUser, int successFlag, String ip) {
+    public static OrderOperateLog buildOperateLog(String orderId, OrderEventEnum orderEventEnum, OperateUserTypeEnum operateUserTypeEnum, String opUser,
+                                                  String curStatus, String newStatus) {
 
         OrderOperateLog opLog = new OrderOperateLog();
         opLog.setOrderId(orderId);
-        opLog.setOperateType(opLogType);
-        opLog.setOperateFlag(successFlag);// 1：成功，2：失败，没有意义，因为事务里写的，只有成功
+        opLog.setOperateType(orderEventEnum.getKey());
         opLog.setSystemId(opUser);
-        opLog.setSystemIp(ip);
 
         StringBuffer content = new StringBuffer();
         content.append("操作类型：");
-        content.append(OrderOperateTypeEnum.getName(opLogType));
+        content.append(OrderEventEnum.getName(orderEventEnum.getName()));
         if (StringUtils.isNotEmpty(curStatus)) {
             content.append("，当前状态：");
             content.append(curStatus);
