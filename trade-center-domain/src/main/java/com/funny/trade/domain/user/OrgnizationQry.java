@@ -2,7 +2,7 @@ package com.funny.trade.domain.user;
 
 
 import com.funny.combo.core.dto.AbstractCommand;
-import com.funny.combo.core.extension.BizScenario;
+import com.funny.combo.extension.BizScenario;
 
 public class OrgnizationQry extends AbstractCommand {
 

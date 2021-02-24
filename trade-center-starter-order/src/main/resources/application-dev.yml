@@ -34,6 +34,6 @@ spring:
     timeout: 0
 
 dubbo:
-  register: nacos://localhost:8848
+  register: 127.0.0.1:2181
   group:
     user: userapi

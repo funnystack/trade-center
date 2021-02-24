@@ -27,9 +27,9 @@ public class OrderData extends OrderDataEntity {
         subOrder.setIsDel(1);
         subOrder.setRefundStatus(0);
 
-        OrderOperateLog log = OrderOperateLog.buildOperateLog(getOrderId(), OrderEventEnum.DELETE.getKey(),
-                OrderStatusEnum.WAIT_PAY.getValue(), OrderStatusEnum.CLOSED.getValue(),
-                "sys_worker", 1, "");
+//        OrderOperateLog log = OrderOperateLog.buildOperateLog(getOrderId(), OrderEventEnum.DELETE.getKey(),
+//                OrderStatusEnum.WAIT_PAY.getValue(), OrderStatusEnum.CLOSED.getValue(),
+//                "sys_worker", 1, "");
 
 
         return this;

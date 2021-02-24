@@ -26,7 +26,6 @@
         <module>trade-center-app</module>
         <module>trade-center-domain</module>
         <module>trade-center-infrastructure</module>
-        <module>trade-center-starter-user</module>
         <module>trade-center-starter-order</module>
     </modules>
 
@@ -65,6 +64,11 @@
             <dependency>
                 <groupId>com.funny.combo</groupId>
                 <artifactId>combo-encrypt-starter</artifactId>
+                <version>${combo.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.funny.combo</groupId>
+                <artifactId>combo-extension-starter</artifactId>
                 <version>${combo.framework.version}</version>
             </dependency>
             <!--Framework End-->
@@ -142,7 +146,7 @@
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
-                <artifactId>dubbo-registry-nacos</artifactId>
+                <artifactId>dubbo-registry-zookeeper</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
 
@@ -190,4 +194,6 @@
             </plugins>
         </pluginManagement>
     </build>
+
+
 </project>

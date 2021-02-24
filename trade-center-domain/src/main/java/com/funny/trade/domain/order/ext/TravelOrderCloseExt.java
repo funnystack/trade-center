@@ -1,7 +1,7 @@
 package com.funny.trade.domain.order.ext;
 
-import com.funny.combo.core.extension.Extension;
 import com.funny.combo.core.result.Response;
+import com.funny.combo.extension.Extension;
 import com.funny.trade.domain.order.entity.OrderDataEntity;
 import lombok.extern.slf4j.Slf4j;
 

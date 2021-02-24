@@ -1,6 +1,6 @@
 package com.funny.trade.domain.user;
 
-import com.funny.combo.core.extension.Extension;
+import com.funny.combo.extension.Extension;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Collections;

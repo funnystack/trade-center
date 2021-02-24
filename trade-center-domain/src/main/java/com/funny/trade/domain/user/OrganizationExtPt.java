@@ -1,6 +1,6 @@
 package com.funny.trade.domain.user;
 
-import com.funny.combo.core.extension.ExtensionPointI;
+import com.funny.combo.extension.ExtensionPointI;
 
 import java.util.List;
 

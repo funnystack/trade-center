@@ -22,7 +22,7 @@ public class OrderOperateLog extends OrderOperateLogEntity {
 
         StringBuffer content = new StringBuffer();
         content.append("操作类型：");
-        content.append(OrderEventEnum.getName(orderEventEnum.getName()));
+        content.append(OrderEventEnum.getName(orderEventEnum.getKey()));
         if (StringUtils.isNotEmpty(curStatus)) {
             content.append("，当前状态：");
             content.append(curStatus);
