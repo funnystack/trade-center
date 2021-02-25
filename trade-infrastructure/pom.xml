@@ -6,13 +6,13 @@
 		<artifactId>trade-center</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>trade-center-infrastructure</artifactId>
+	<artifactId>trade-infrastructure</artifactId>
 	<version>${trade-center.version}</version>
 	<dependencies>
 		<!--DIP here, Infrastructure depends on Domain-->
 		<dependency>
 			<groupId>com.funny.trade</groupId>
-			<artifactId>trade-center-domain</artifactId>
+			<artifactId>trade-domain</artifactId>
 		</dependency>
 
 		<dependency>

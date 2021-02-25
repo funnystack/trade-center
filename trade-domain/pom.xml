@@ -6,7 +6,7 @@
 		<artifactId>trade-center</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>trade-center-domain</artifactId>
+	<artifactId>trade-domain</artifactId>
 	<version>${trade-center.version}</version>
 	<dependencies>
 		<!-- COLA Framework -->
@@ -20,7 +20,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.funny.trade</groupId>
-			<artifactId>trade-center-client</artifactId>
+			<artifactId>trade-client</artifactId>
 		</dependency>
 		<!-- COLA Framework End-->
 		<dependency>

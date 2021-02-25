@@ -6,7 +6,7 @@
 		<artifactId>trade-center</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
-	<artifactId>trade-center-client</artifactId>
+	<artifactId>trade-client</artifactId>
 	<version>${trade-center.version}</version>
 	<dependencies>
 		<dependency>

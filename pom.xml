@@ -22,11 +22,11 @@
     </properties>
 
     <modules>
-        <module>trade-center-client</module>
-        <module>trade-center-app</module>
-        <module>trade-center-domain</module>
-        <module>trade-center-infrastructure</module>
-        <module>trade-center-starter-order</module>
+        <module>trade-client</module>
+        <module>trade-app</module>
+        <module>trade-domain</module>
+        <module>trade-infrastructure</module>
+        <module>trade-order-starter</module>
     </modules>
 
     <dependencyManagement>
@@ -75,22 +75,22 @@
             <!--Project modules-->
             <dependency>
                 <groupId>com.funny.trade</groupId>
-                <artifactId>trade-center-client</artifactId>
+                <artifactId>trade-client</artifactId>
                 <version>${trade-center.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.funny.trade</groupId>
-                <artifactId>trade-center-app</artifactId>
+                <artifactId>trade-app</artifactId>
                 <version>${trade-center.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.funny.trade</groupId>
-                <artifactId>trade-center-domain</artifactId>
+                <artifactId>trade-domain</artifactId>
                 <version>${trade-center.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.funny.trade</groupId>
-                <artifactId>trade-center-infrastructure</artifactId>
+                <artifactId>trade-infrastructure</artifactId>
                 <version>${trade-center.version}</version>
             </dependency>
 
@@ -177,23 +177,43 @@
         </dependencies>
     </dependencyManagement>
 
+
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>3.0.1</version>
-                </plugin>
-                <plugin>
-          				<artifactId>maven-deploy-plugin</artifactId>
-          				<configuration>
-          					<skip>true</skip>
-          				</configuration>
-          			</plugin>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
     </build>
+
+    <!-- 配置远程发布到私服，mvn deploy -->
+    <distributionManagement>
+        <repository>
+            <id>rdc-releases</id>
+            <url>https://packages.aliyun.com/maven/repository/2015788-release-XtEkJb</url>
+        </repository>
+        <snapshotRepository>
+            <id>rdc-snapshots</id>
+            <url>https://packages.aliyun.com/maven/repository/2015788-snapshot-V4uFmo/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 
 </project>
