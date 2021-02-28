@@ -22,7 +22,7 @@ public class OrderCycleInfoEntity extends BaseEntity {
     protected Integer nodeId;
 
     /**
-    *
+    * 节点名称
     */
     protected String nodeName;
 

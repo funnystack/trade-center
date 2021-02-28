@@ -1,12 +1,12 @@
 package com.funny.trade.client.api.user;
 
 
-import com.funny.combo.core.result.CommonResult;
-import com.funny.trade.client.dto.user.UserInfo;
+import com.funny.combo.core.result.SingleResponse;
+import com.funny.trade.client.dto.user.UserInfoDTO;
 
 public interface UserDubboService {
 
-    CommonResult<UserInfo> queryByUserId(Long userId);
+    SingleResponse<UserInfoDTO> queryByUserId(Long userId);
 
-    CommonResult addUserInfo(UserInfo tradeUserInfo);
+    SingleResponse addUserInfo(UserInfoDTO tradeUserInfoDTO);
 }

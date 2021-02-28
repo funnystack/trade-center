@@ -2,6 +2,8 @@ package com.funny.trade.domain.order.entity;
 
 import com.funny.combo.core.annotion.Entity;
 import com.funny.combo.core.base.BaseEntity;
+import com.funny.trade.domain.order.enums.AmountTypeEnum;
+import com.funny.trade.domain.order.enums.CouponTypeEnum;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,13 +14,6 @@ import java.util.Date;
 @Entity
 public class OrderCouponDetailEntity extends BaseEntity {
     private static final long serialVersionUID = 3052914758305869814L;
-
-    /**
-     * 业务线id 10 电商，11 车服务
-     */
-    private Integer businessId;
-
-    private Integer dbSource;
     /**
      * 订单号
      */
@@ -40,11 +35,13 @@ public class OrderCouponDetailEntity extends BaseEntity {
 
     /**
      *金额类目
+     * @see AmountTypeEnum
      */
     private Integer amountType;
 
     /**
      *优惠方式
+     * @see CouponTypeEnum
      */
     private Integer couponType;
 
@@ -64,12 +61,12 @@ public class OrderCouponDetailEntity extends BaseEntity {
     private Integer couponId;
 
     /**
-     *红包券码
+     *优惠券券码
      */
-    private String refCode;
+    private String couponCode;
 
     /**
-     *批次
+     *优惠券批次
      */
     private String couponBatchId;
 
@@ -117,16 +114,6 @@ public class OrderCouponDetailEntity extends BaseEntity {
      *deduction_price
      */
     private BigDecimal deductionPrice;
-
-    /**
-     *创建时间
-     */
-    private Date createTime;
-
-    /**
-     *修改时间
-     */
-    private Date updateTime;
 
     /**
      *总单优惠金额

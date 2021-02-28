@@ -15,12 +15,6 @@ public class OrderDataEntity extends BaseEntity {
     */
     private Integer dbSource;
 
-
-    /**
-     * 数据来源
-     */
-    private Integer dataSource;
-
     private Integer businessId;
     /**
      * 生成订单的入口标识
@@ -31,6 +25,25 @@ public class OrderDataEntity extends BaseEntity {
     * 订单号
     */
     private String orderId;
+    /**
+     * 外部订单号
+     */
+    private String externalOrderId;
+
+    /**
+     * 子单类型，父单为 0
+     */
+    private Integer subOrderType;
+
+    /**
+     * 父单id，若为父单为0，不拆分为null
+     */
+    private String parentOrderId;
+
+    /**
+     * 原始单号(提交订单时的单号)
+     */
+    private String originOrderId;
 
     /**
     * 商家编号
@@ -40,16 +53,38 @@ public class OrderDataEntity extends BaseEntity {
      * 商家名称
      */
     private String sellerName;
-
+    /**
+     * 下单账号
+     */
+    private Long userId;
+    /**
+     * 用户昵称
+     */
+    private String userName;
+    /**
+     * 发票ID
+     */
+    private Integer invoiceId;
+    /**
+     * 用户地址id
+     */
+    private Integer addressId;
+    /**
+     * 订单备注
+     */
+    private String orderRemark;
     /**
     * 订单类型
     */
     private Integer orderType;
-
     /**
     * 支付类型
     */
     private Integer paymentType;
+
+
+
+
 
     /**
     * 订单状态
@@ -90,10 +125,7 @@ public class OrderDataEntity extends BaseEntity {
     */
     private Date orderClosedTime;
 
-    /**
-    * 订单标记
-    */
-    private String orderRemark;
+
 
     /**
     * 订单金额
@@ -121,118 +153,58 @@ public class OrderDataEntity extends BaseEntity {
      * 尾款
      */
     private BigDecimal finalPay;
-
-
     /**
-    * 订单来源，1：pc，2：m端等等
-    */
-    private String orderSource;
-
-    /**
-    * 外部订单号
-    */
-    private String externalOrderId;
-
-
-    /**
-    * 子单类型，父单为 0
-    */
-    private Integer subOrderType;
-
-    /**
-    * 父单id，若为父单为0，不拆分为null
-    */
-    private String parentOrderId;
-
-    /**
-    * 原始单号(提交订单时的单号)
-    */
-    private String originOrderId;
-
-    /**
-     * 客户姓名铭文
+     * 订单评论状态
      */
-    private String consName;
-
-    private String consEmail;
-
-    private String consEmailEncrypt;
-
-    /**
-    * {"describe":"顾客姓名_密文","En_Method":"公司统一","Hash":"cons_name_hash","owner":"魏玮"}
-    */
-    private String consNameEncrypt;
-
-    /**
-     * 客户地址铭文
-     */
-    private String consAddress;
-
-    /**
-    * {"describe":"地址_密文","En_Method":"公司统一","Hash":"cons_address_hash","owner":"魏玮"}
-    */
-    private String consAddressEncrypt;
-
-    /**
-     * 客户手机号的明文
-     */
-    private String consPhone;
-
-    /**
-    * {"describe":"手机号_密文","En_Method":"公司统一","Hash":"cons_phone_hash","owner":"魏玮"}
-    */
-    private String consPhoneEncrypt;
-
-    /**
-    * 顾客姓名_hash密文
-    */
-    private String consNameHash;
-
-    /**
-    * 地址_hash密文
-    */
-    private String consAddressHash;
-
-    /**
-    * 手机号_hash密文
-    */
-    private String consPhoneHash;
-
-    /**
-     * 身份证号明文
-     */
-    private String idCard;
-
-    /**
-    * 身份证号encrypt
-    */
-    private String idCardEncrypt;
-
-    /**
-    * 身份证号hash
-    */
-    private String idCardHash;
-
-    /**
-     * 下单账号
-     */
-    private Long userId;
-    /**
-     * 用户昵称
-     */
-    private String userName;
-    /**
-    * 发票ID
-    */
-    private Integer invoiceId;
-
-    private Integer addressId;
-
     private Integer commentStatus;
+    /**
+     * 订单对外统一输出的状态
+     */
+    private Integer outOrderStatus;
 
-    private Integer orderStatusNew;
 
-    private Integer buyProvinceId;
-    private Integer buyCityId;
 
+
+
+    /**
+     * 促销活动id
+     */
+    private Integer promotionId;
+    /**
+     * 阶梯购状态，null 非阶梯购，1 处理中，2 活动结束, 3支付时间大于活动结束时间、未支付、关单
+     */
+    private Integer ladderStatus;
+
+    /**
+     * 营销事件
+     */
+    private Integer holiday;
+
+    /**
+     * 营销事件场次id
+     */
+    private Integer processId;
+    /**
+     * 活动ID
+     */
+    private Integer activityId;
+    /**
+     * 团ID
+     */
+    private Integer groupId;
+
+    /**
+     * 活动类型（1拼团，2阶梯购）
+     */
+    private Integer activityType;
+
+    /**
+     * 活动状态（1活动进行中，2活动结束，成团，3活动结束，未成团，4参与无效）
+     */
+    private Integer activityStatus;
+
+    /**
+     * 活动退款标记（1,进行中和成团均不退;2,进行中不退,成团可退;3随时可退）
+     */
+    private Integer activityRefundFlag;
 }

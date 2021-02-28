@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funny.trade.gatewayimpl.database.user.UserWxInfoMapper">
+  <sql id="Base_Column_List">
+    id, user_id, open_id, union_id, wx_phone, wx_nick_name, wx_gender, wx_country, wx_city, 
+    wx_province, wx_avatar_url, gmt_created, gmt_modified, is_del
+  </sql>
+  <resultMap id="BaseResultMap" type="com.funny.trade.domain.user.entity.UserWxInfoEntity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="union_id" jdbcType="VARCHAR" property="unionId" />
+    <result column="wx_phone" jdbcType="VARCHAR" property="wxPhone" />
+    <result column="wx_nick_name" jdbcType="VARCHAR" property="wxNickName" />
+    <result column="wx_gender" jdbcType="VARCHAR" property="wxGender" />
+    <result column="wx_country" jdbcType="VARCHAR" property="wxCountry" />
+    <result column="wx_city" jdbcType="VARCHAR" property="wxCity" />
+    <result column="wx_province" jdbcType="VARCHAR" property="wxProvince" />
+    <result column="wx_avatar_url" jdbcType="VARCHAR" property="wxAvatarUrl" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+  </resultMap>
+  <sql id="sql_where_condition">
+    <if test="userId  != null ">
+       and user_id = #{userId,jdbcType=BIGINT}
+    </if>
+    <if test="openId  != null ">
+       and open_id = #{openId,jdbcType=VARCHAR}
+    </if>
+    <if test="unionId  != null ">
+       and union_id = #{unionId,jdbcType=VARCHAR}
+    </if>
+    <if test="wxPhone  != null ">
+       and wx_phone = #{wxPhone,jdbcType=VARCHAR}
+    </if>
+    <if test="wxNickName  != null ">
+       and wx_nick_name = #{wxNickName,jdbcType=VARCHAR}
+    </if>
+    <if test="wxGender  != null ">
+       and wx_gender = #{wxGender,jdbcType=VARCHAR}
+    </if>
+    <if test="wxCountry  != null ">
+       and wx_country = #{wxCountry,jdbcType=VARCHAR}
+    </if>
+    <if test="wxCity  != null ">
+       and wx_city = #{wxCity,jdbcType=VARCHAR}
+    </if>
+    <if test="wxProvince  != null ">
+       and wx_province = #{wxProvince,jdbcType=VARCHAR}
+    </if>
+    <if test="wxAvatarUrl  != null ">
+       and wx_avatar_url = #{wxAvatarUrl,jdbcType=VARCHAR}
+    </if>
+    <if test="gmtCreated  != null ">
+       and gmt_created = #{gmtCreated,jdbcType=TIMESTAMP}
+    </if>
+    <if test="gmtModified  != null ">
+       and gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    </if>
+    <if test="isDel  != null ">
+       and is_del = #{isDel,jdbcType=INTEGER}
+    </if>
+  </sql>
+  <insert id="insertSelective" parameterType="com.funny.trade.domain.user.entity.UserWxInfoEntity">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_wx_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="unionId != null">
+        union_id,
+      </if>
+      <if test="wxPhone != null">
+        wx_phone,
+      </if>
+      <if test="wxNickName != null">
+        wx_nick_name,
+      </if>
+      <if test="wxGender != null">
+        wx_gender,
+      </if>
+      <if test="wxCountry != null">
+        wx_country,
+      </if>
+      <if test="wxCity != null">
+        wx_city,
+      </if>
+      <if test="wxProvince != null">
+        wx_province,
+      </if>
+      <if test="wxAvatarUrl != null">
+        wx_avatar_url,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="unionId != null">
+        #{unionId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPhone != null">
+        #{wxPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="wxNickName != null">
+        #{wxNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxGender != null">
+        #{wxGender,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCountry != null">
+        #{wxCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCity != null">
+        #{wxCity,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProvince != null">
+        #{wxProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAvatarUrl != null">
+        #{wxAvatarUrl,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelectiveById" parameterType="com.funny.trade.domain.user.entity.UserWxInfoEntity">
+    update user_wx_info
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="unionId != null">
+        union_id = #{unionId,jdbcType=VARCHAR},
+      </if>
+      <if test="wxPhone != null">
+        wx_phone = #{wxPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="wxNickName != null">
+        wx_nick_name = #{wxNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="wxGender != null">
+        wx_gender = #{wxGender,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCountry != null">
+        wx_country = #{wxCountry,jdbcType=VARCHAR},
+      </if>
+      <if test="wxCity != null">
+        wx_city = #{wxCity,jdbcType=VARCHAR},
+      </if>
+      <if test="wxProvince != null">
+        wx_province = #{wxProvince,jdbcType=VARCHAR},
+      </if>
+      <if test="wxAvatarUrl != null">
+        wx_avatar_url = #{wxAvatarUrl,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="findEntityById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_wx_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="listByCondition" parameterType="com.funny.trade.domain.user.entity.UserWxInfoEntity" resultMap="BaseResultMap">
+    SELECT 
+    <include refid="Base_Column_List" />
+    FROM user_wx_info where 1 = 1
+    <include refid="sql_where_condition" />
+  </select>
+  <select id="count" parameterType="com.funny.trade.domain.user.entity.UserWxInfoEntity" resultMap="BaseResultMap">
+    SELECT count(1) FROM user_wx_info where 1 = 1
+    <include refid="sql_where_condition" />
+  </select>
+</mapper>

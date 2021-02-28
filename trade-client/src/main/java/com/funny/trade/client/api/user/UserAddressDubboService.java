@@ -1,7 +1,7 @@
 package com.funny.trade.client.api.user;
 
 
-import com.funny.trade.client.dto.user.UserAddressInfo;
+import com.funny.trade.client.dto.user.UserAddressInfoDTO;
 
 import java.util.List;
 
@@ -15,28 +15,28 @@ public interface UserAddressDubboService {
      * @param userId
      * @return
      */
-    List<UserAddressInfo> listAllUserAddress(Long userId);
+    List<UserAddressInfoDTO> listAllUserAddress(Long userId);
 
 
     /**
      * 新增用户地址
      * @return
      */
-    boolean addUserAddress(UserAddressInfo userAddressDTO);
+    boolean addUserAddress(UserAddressInfoDTO userAddressDTO);
 
     /**
      * 修改用户地址
      * @param userAddressDTO
      * @return
      */
-    boolean updateUserAddress(UserAddressInfo userAddressDTO);
+    boolean updateUserAddress(UserAddressInfoDTO userAddressDTO);
 
     /**
      * 查询地址id信息
      * @param id
      * @return
      */
-    UserAddressInfo getUserAddressById(Long id);
+    UserAddressInfoDTO getUserAddressById(Long id);
 
     /**
      * 删除收货地址

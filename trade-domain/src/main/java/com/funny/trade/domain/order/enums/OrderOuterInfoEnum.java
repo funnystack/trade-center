@@ -1,8 +1,5 @@
 package com.funny.trade.domain.order.enums;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 订单营销活动枚举
  */

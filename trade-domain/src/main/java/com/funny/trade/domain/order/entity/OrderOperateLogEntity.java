@@ -33,7 +33,6 @@ public class OrderOperateLogEntity extends BaseEntity {
     * 操作订单的系统唯一标识
     */
     private String systemId;
-
     /**
     *
     */

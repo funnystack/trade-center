@@ -1,7 +1,7 @@
 package com.funny.trade.client.api.user;
 
 
-import com.funny.trade.client.dto.user.UserInvoiceInfo;
+import com.funny.trade.client.dto.user.UserInvoiceInfoDTO;
 
 import java.util.List;
 
@@ -15,28 +15,28 @@ public interface UserInvoiceDubboService {
      * @param userId
      * @return
      */
-    List<UserInvoiceInfo> listAllUserInvoice(Long userId);
+    List<UserInvoiceInfoDTO> listAllUserInvoice(Long userId);
 
 
     /**
      * 新增用户开票信息
      * @return
      */
-    boolean addUserInvoice(UserInvoiceInfo userInvoiceDTO);
+    boolean addUserInvoice(UserInvoiceInfoDTO userInvoiceDTO);
 
     /**
      * 修改用户开票信息
      * @param userInvoiceDTO
      * @return
      */
-    boolean updateUserInvoice(UserInvoiceInfo userInvoiceDTO);
+    boolean updateUserInvoice(UserInvoiceInfoDTO userInvoiceDTO);
 
     /**
      * 查询开票信息
      * @param id
      * @return
      */
-    UserInvoiceInfo getUserInvoiceById(Long id);
+    UserInvoiceInfoDTO getUserInvoiceById(Long id);
 
     /**
      * 删除开票信息

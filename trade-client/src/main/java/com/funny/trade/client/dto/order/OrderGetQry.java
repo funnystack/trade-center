@@ -7,4 +7,5 @@ import lombok.Data;
 public class OrderGetQry extends AbstractCommand {
 
     private String orderId;
+
 }

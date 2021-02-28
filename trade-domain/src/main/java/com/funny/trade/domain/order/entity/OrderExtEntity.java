@@ -246,32 +246,6 @@ public class OrderExtEntity extends BaseEntity {
      * 商家后台放款通知状态：0-未上传 ，1-已上传（审核中），2-通过 ，3-未通过
      */
     private Integer sellerLoannoticeStatus;
-
-    /**
-     * 活动ID
-     */
-    private Integer activityId;
-
-    /**
-     * 团ID
-     */
-    private Integer groupId;
-
-    /**
-     * 活动类型（1拼团，2阶梯购）
-     */
-    private Integer activityType;
-
-    /**
-     * 活动状态（1活动进行中，2活动结束，成团，3活动结束，未成团，4参与无效）
-     */
-    private Integer activityStatus;
-
-    /**
-     * 活动退款标记（1,进行中和成团均不退;2,进行中不退,成团可退;3随时可退）
-     */
-    private Integer activityRefundFlag;
-
     /**
      * 是否自营店铺，商家单独的字段，不同于二网盟主之类 0不是，1是
      */
@@ -418,21 +392,6 @@ public class OrderExtEntity extends BaseEntity {
     private Date paymentEarnestTime;
 
     /**
-     * 阶梯购状态，null 非阶梯购，1 处理中，2 活动结束, 3支付时间大于活动结束时间、未支付、关单
-     */
-    private Integer ladderStatus;
-
-    /**
-     * 营销事件
-     */
-    private Integer holiday;
-
-    /**
-     * 营销事件场次id
-     */
-    private Integer processId;
-
-    /**
      * 上传发票
      */
     private Integer upInvoice;
@@ -443,32 +402,8 @@ public class OrderExtEntity extends BaseEntity {
     private Integer agentSellerId;
 
     /**
-     * 创建时间
+     * 订单来源，1：pc，2：m端等等
      */
-    private Date createTime;
-
-    /**
-     * 修改时间
-     */
-    private Date updateTime;
-
-    /**
-     * 写入主数据库的时间
-     */
-    private Date maindataCreateTime;
-
-    /**
-     * 记录在主数据库更新的时间
-     */
-    private Date maindataUpdateTime;
-    /**
-     * 数据来源，1 order_mark，2 order_code_info，3 order_data 4 order，5 orderdetail
-     */
-    private Integer dataSource;
-
-    /**
-     * 促销活动id
-     */
-    private Integer promotionId;
+    private String orderSource;
 
 }

@@ -72,7 +72,7 @@
                     <projectDirectory>${project.basedir}</projectDirectory>
                     <packageName>com.funny.trade</packageName>
                     <moduleName>user</moduleName>
-                    <tableNames>trade_user_info</tableNames>
+                    <tableNames>user_invoice</tableNames>
                     <ignorePeffix>ERP,CC</ignorePeffix>
                 </configuration>
             </plugin>

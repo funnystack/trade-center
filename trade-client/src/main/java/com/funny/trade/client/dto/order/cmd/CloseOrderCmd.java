@@ -1,4 +1,4 @@
-package com.funny.trade.client.dto.order;
+package com.funny.trade.client.dto.order.cmd;
 
 import com.funny.combo.core.dto.AbstractCommand;
 import lombok.Data;

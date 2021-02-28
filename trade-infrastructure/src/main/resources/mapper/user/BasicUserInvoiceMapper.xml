@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funny.trade.gatewayimpl.database.user.UserInvoiceMapper">
+  <sql id="Base_Column_List">
+    id, user_id, invoice_title, invoice_title_type, invoice_type, tax_payer_code, register_address, 
+    register_mobile, bank_account, bank_name, receive_email_encrypt, receive_mobile_encrypt, 
+    invoice_content, gmt_created, gmt_modified, is_del
+  </sql>
+  <resultMap id="BaseResultMap" type="com.funny.trade.domain.user.entity.UserInvoiceEntity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="invoice_title" jdbcType="VARCHAR" property="invoiceTitle" />
+    <result column="invoice_title_type" jdbcType="INTEGER" property="invoiceTitleType" />
+    <result column="invoice_type" jdbcType="INTEGER" property="invoiceType" />
+    <result column="tax_payer_code" jdbcType="VARCHAR" property="taxPayerCode" />
+    <result column="register_address" jdbcType="VARCHAR" property="registerAddress" />
+    <result column="register_mobile" jdbcType="VARCHAR" property="registerMobile" />
+    <result column="bank_account" jdbcType="VARCHAR" property="bankAccount" />
+    <result column="bank_name" jdbcType="VARCHAR" property="bankName" />
+    <result column="receive_email_encrypt" jdbcType="VARCHAR" property="receiveEmail" typeHandler="com.funny.combo.encrypt.handler.CryptTypeHandler" />
+    <result column="receive_mobile_encrypt" jdbcType="VARCHAR" property="receiveMobile" typeHandler="com.funny.combo.encrypt.handler.CryptTypeHandler" />
+    <result column="invoice_content" jdbcType="VARCHAR" property="invoiceContent" />
+    <result column="gmt_created" jdbcType="TIMESTAMP" property="gmtCreated" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+  </resultMap>
+  <sql id="sql_where_condition">
+    <if test="userId  != null ">
+       and user_id = #{userId,jdbcType=VARCHAR}
+    </if>
+    <if test="invoiceTitle  != null ">
+       and invoice_title = #{invoiceTitle,jdbcType=VARCHAR}
+    </if>
+    <if test="invoiceTitleType  != null ">
+       and invoice_title_type = #{invoiceTitleType,jdbcType=INTEGER}
+    </if>
+    <if test="invoiceType  != null ">
+       and invoice_type = #{invoiceType,jdbcType=INTEGER}
+    </if>
+    <if test="taxPayerCode  != null ">
+       and tax_payer_code = #{taxPayerCode,jdbcType=VARCHAR}
+    </if>
+    <if test="registerAddress  != null ">
+       and register_address = #{registerAddress,jdbcType=VARCHAR}
+    </if>
+    <if test="registerMobile  != null ">
+       and register_mobile = #{registerMobile,jdbcType=VARCHAR}
+    </if>
+    <if test="bankAccount  != null ">
+       and bank_account = #{bankAccount,jdbcType=VARCHAR}
+    </if>
+    <if test="bankName  != null ">
+       and bank_name = #{bankName,jdbcType=VARCHAR}
+    </if>
+    <if test="receiveEmail  != null ">
+       and receive_email_encrypt = #{receiveEmail,jdbcType=VARCHAR,typeHandler=com.funny.combo.encrypt.handler.CryptTypeHandler}
+    </if>
+    <if test="receiveMobile  != null ">
+       and receive_mobile_encrypt = #{receiveMobile,jdbcType=VARCHAR,typeHandler=com.funny.combo.encrypt.handler.CryptTypeHandler}
+    </if>
+    <if test="invoiceContent  != null ">
+       and invoice_content = #{invoiceContent,jdbcType=VARCHAR}
+    </if>
+    <if test="gmtCreated  != null ">
+       and gmt_created = #{gmtCreated,jdbcType=TIMESTAMP}
+    </if>
+    <if test="gmtModified  != null ">
+       and gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    </if>
+    <if test="isDel  != null ">
+       and is_del = #{isDel,jdbcType=INTEGER}
+    </if>
+  </sql>
+  <insert id="insertSelective" parameterType="com.funny.trade.domain.user.entity.UserInvoiceEntity">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into user_invoice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="invoiceTitle != null">
+        invoice_title,
+      </if>
+      <if test="invoiceTitleType != null">
+        invoice_title_type,
+      </if>
+      <if test="invoiceType != null">
+        invoice_type,
+      </if>
+      <if test="taxPayerCode != null">
+        tax_payer_code,
+      </if>
+      <if test="registerAddress != null">
+        register_address,
+      </if>
+      <if test="registerMobile != null">
+        register_mobile,
+      </if>
+      <if test="bankAccount != null">
+        bank_account,
+      </if>
+      <if test="bankName != null">
+        bank_name,
+      </if>
+      <if test="receiveEmail != null">
+        receive_email_encrypt,
+      </if>
+      <if test="receiveMobile != null">
+        receive_mobile_encrypt,
+      </if>
+      <if test="invoiceContent != null">
+        invoice_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null">
+        #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitleType != null">
+        #{invoiceTitleType,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceType != null">
+        #{invoiceType,jdbcType=INTEGER},
+      </if>
+      <if test="taxPayerCode != null">
+        #{taxPayerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddress != null">
+        #{registerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="registerMobile != null">
+        #{registerMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccount != null">
+        #{bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveEmail != null">
+        #{receiveEmail,jdbcType=VARCHAR,typeHandler=com.funny.combo.encrypt.handler.CryptTypeHandler},
+      </if>
+      <if test="receiveMobile != null">
+        #{receiveMobile,jdbcType=VARCHAR,typeHandler=com.funny.combo.encrypt.handler.CryptTypeHandler},
+      </if>
+      <if test="invoiceContent != null">
+        #{invoiceContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelectiveById" parameterType="com.funny.trade.domain.user.entity.UserInvoiceEntity">
+    update user_invoice
+    <set>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitle != null">
+        invoice_title = #{invoiceTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="invoiceTitleType != null">
+        invoice_title_type = #{invoiceTitleType,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceType != null">
+        invoice_type = #{invoiceType,jdbcType=INTEGER},
+      </if>
+      <if test="taxPayerCode != null">
+        tax_payer_code = #{taxPayerCode,jdbcType=VARCHAR},
+      </if>
+      <if test="registerAddress != null">
+        register_address = #{registerAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="registerMobile != null">
+        register_mobile = #{registerMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="bankAccount != null">
+        bank_account = #{bankAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="bankName != null">
+        bank_name = #{bankName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveEmail != null">
+        receive_email_encrypt = #{receiveEmail,jdbcType=VARCHAR,typeHandler=com.funny.combo.encrypt.handler.CryptTypeHandler},
+      </if>
+      <if test="receiveMobile != null">
+        receive_mobile_encrypt = #{receiveMobile,jdbcType=VARCHAR,typeHandler=com.funny.combo.encrypt.handler.CryptTypeHandler},
+      </if>
+      <if test="invoiceContent != null">
+        invoice_content = #{invoiceContent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="findEntityById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user_invoice
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="listByCondition" parameterType="com.funny.trade.domain.user.entity.UserInvoiceEntity" resultMap="BaseResultMap">
+    SELECT 
+    <include refid="Base_Column_List" />
+    FROM user_invoice where 1 = 1
+    <include refid="sql_where_condition" />
+  </select>
+  <select id="count" parameterType="com.funny.trade.domain.user.entity.UserInvoiceEntity" resultMap="BaseResultMap">
+    SELECT count(1) FROM user_invoice where 1 = 1
+    <include refid="sql_where_condition" />
+  </select>
+</mapper>
