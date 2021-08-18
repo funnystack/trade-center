@@ -8,6 +8,7 @@
 	</parent>
 	<artifactId>trade-client</artifactId>
 	<version>${trade-center.version}</version>
+	<packaging>jar</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>com.funny.combo</groupId>

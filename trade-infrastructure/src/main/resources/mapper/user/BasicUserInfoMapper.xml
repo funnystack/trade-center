@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.funny.trade.gatewayimpl.database.user.UserInfoMapper">
+<mapper namespace="com.funny.trade.infra.persistence.mapper.user.UserInfoMapper">
   <sql id="Base_Column_List">
     id, user_name, user_pwd, mobile_encrypt, mobile_hash, gmt_created, gmt_modified, 
     is_del

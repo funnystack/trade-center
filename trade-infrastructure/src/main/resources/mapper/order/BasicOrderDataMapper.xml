@@ -1,0 +1,603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funny.trade.infra.persistence.mapper.order.OrderDataMapper">
+  <sql id="Base_Column_List">
+    id, maindata_id, db_source, ora_id, ora_sub_id, order_id, business_id, seller_id,
+    order_type, payment_type, order_status, is_delete, order_create_time, expiration_time,
+    payment_confirm_time, order_outbound_time, order_complete_time, order_closed_time,
+    order_remark, order_sum, coupon_sum, should_pay, freight_sum, user_id, order_source,
+    external_order_id, user_name, partner_id, refund_status, version, final_pay, seller_name,
+    sub_order_type, total_sum, parent_order_id, origin_order_id, cons_name_encrypt, cons_address_encrypt,
+    cons_phone_encrypt, cons_name_hash, cons_email_encrypt,cons_address_hash, cons_phone_hash, id_card_encrypt,
+    id_card_hash, extend_status, buyerid, idcode, pay_trade_no, additional_info, channel,
+    user_address_id, tech_parnter_id, sub_order_num, order_route, disaccount, invoice_id,
+    price_channel_id, batch_no, pid_code, seller_settings_id, settle_accounts_status,
+    ext_additional_info, order_express_info_id, order_cost_status, device_id, guid, pay_method,
+    create_time, update_time, maindata_create_time, maindata_update_time, is_del, data_source,
+    main_order_status, jia_return_money_state, jia_approve_state, platform_id,order_status_new,
+    login_province_id, login_city_id,comment_status,deposit_lock_status,deposit_lock_time
+  </sql>
+
+  <resultMap id="BaseResultMap" type="com.funny.trade.domain.order.entity.OrderDataEntity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="db_source" jdbcType="BIGINT" property="dbSource" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="business_id" jdbcType="BIGINT" property="businessId" />
+    <result column="order_route" jdbcType="VARCHAR" property="orderRoute" />
+    <result column="seller_id" jdbcType="INTEGER" property="sellerId" />
+    <result column="order_type" jdbcType="INTEGER" property="orderType" />
+    <result column="payment_type" jdbcType="INTEGER" property="paymentType" />
+    <result column="order_status" jdbcType="INTEGER" property="orderStatus" />
+    <result column="order_create_time" jdbcType="TIMESTAMP" property="orderCreateTime" />
+    <result column="expiration_time" jdbcType="TIMESTAMP" property="expirationTime" />
+    <result column="payment_confirm_time" jdbcType="TIMESTAMP" property="paymentConfirmTime" />
+    <result column="order_outbound_time" jdbcType="TIMESTAMP" property="orderOutboundTime" />
+    <result column="order_complete_time" jdbcType="TIMESTAMP" property="orderCompleteTime" />
+    <result column="order_closed_time" jdbcType="TIMESTAMP" property="orderClosedTime" />
+    <result column="order_remark" jdbcType="VARCHAR" property="orderRemark" />
+    <result column="order_sum" jdbcType="DECIMAL" property="orderSum" />
+    <result column="coupon_sum" jdbcType="DECIMAL" property="couponSum" />
+    <result column="should_pay" jdbcType="DECIMAL" property="shouldPay" />
+    <result column="freight_sum" jdbcType="DECIMAL" property="freightSum" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="external_order_id" jdbcType="VARCHAR" property="externalOrderId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="refund_status" jdbcType="INTEGER" property="refundStatus" />
+    <result column="final_pay" jdbcType="DECIMAL" property="finalPay" />
+    <result column="seller_name" jdbcType="VARCHAR" property="sellerName" />
+    <result column="sub_order_type" jdbcType="INTEGER" property="subOrderType" />
+    <result column="total_sum" jdbcType="DECIMAL" property="totalSum" />
+    <result column="parent_order_id" jdbcType="VARCHAR" property="parentOrderId" />
+    <result column="origin_order_id" jdbcType="VARCHAR" property="originOrderId" />
+    <result column="invoice_id" jdbcType="INTEGER" property="invoiceId" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="comment_status" jdbcType="INTEGER" property="commentStatus" />
+
+  </resultMap>
+
+  <insert id="insertSelective" parameterType="com.funny.trade.domain.order.entity.OrderDataEntity">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into order_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dbSource != null">
+        db_source,
+      </if>
+      <if test="oraId != null">
+        ora_id,
+      </if>
+      <if test="oraSubId != null">
+        ora_sub_id,
+      </if>
+      <if test="orderId != null">
+        order_id,
+      </if>
+      <if test="businessId != null">
+        business_id,
+      </if>
+      <if test="sellerId != null">
+        seller_id,
+      </if>
+      <if test="orderType != null">
+        order_type,
+      </if>
+      <if test="paymentType != null">
+        payment_type,
+      </if>
+      <if test="orderStatus != null">
+        order_status,
+      </if>
+      <if test="isDelete != null">
+        is_delete,
+      </if>
+      <if test="orderCreateTime != null">
+        order_create_time,
+      </if>
+      <if test="expirationTime != null">
+        expiration_time,
+      </if>
+      <if test="paymentConfirmTime != null">
+        payment_confirm_time,
+      </if>
+      <if test="orderOutboundTime != null">
+        order_outbound_time,
+      </if>
+      <if test="orderCompleteTime != null">
+        order_complete_time,
+      </if>
+      <if test="orderClosedTime != null">
+        order_closed_time,
+      </if>
+      <if test="orderRemark != null">
+        order_remark,
+      </if>
+      <if test="orderSum != null">
+        order_sum,
+      </if>
+      <if test="couponSum != null">
+        coupon_sum,
+      </if>
+      <if test="shouldPay != null">
+        should_pay,
+      </if>
+      <if test="freightSum != null">
+        freight_sum,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="orderSource != null">
+        order_source,
+      </if>
+      <if test="externalOrderId != null">
+        external_order_id,
+      </if>
+      <if test="userName != null">
+        user_name,
+      </if>
+      <if test="partnerId != null">
+        partner_id,
+      </if>
+      <if test="refundStatus != null">
+        refund_status,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="finalPay != null">
+        final_pay,
+      </if>
+      <if test="sellerName != null">
+        seller_name,
+      </if>
+      <if test="subOrderType != null">
+        sub_order_type,
+      </if>
+      <if test="totalSum != null">
+        total_sum,
+      </if>
+      <if test="parentOrderId != null">
+        parent_order_id,
+      </if>
+      <if test="originOrderId != null">
+        origin_order_id,
+      </if>
+      <if test="consNameEncrypt != null">
+        cons_name_encrypt,
+      </if>
+      <if test="consAddressEncrypt != null">
+        cons_address_encrypt,
+      </if>
+      <if test="consPhoneEncrypt != null">
+        cons_phone_encrypt,
+      </if>
+      <if test="consNameHash != null">
+        cons_name_hash,
+      </if>
+      <if test="consAddressHash != null">
+        cons_address_hash,
+      </if>
+      <if test="consPhoneHash != null">
+        cons_phone_hash,
+      </if>
+      <if test="idCardEncrypt != null">
+        id_card_encrypt,
+      </if>
+      <if test="idCardHash != null">
+        id_card_hash,
+      </if>
+      <if test="extendStatus != null">
+        extend_status,
+      </if>
+      <if test="buyerid != null">
+        buyerid,
+      </if>
+      <if test="idcode != null">
+        idcode,
+      </if>
+      <if test="payTradeNo != null">
+        pay_trade_no,
+      </if>
+      <if test="additionalInfo != null">
+        additional_info,
+      </if>
+      <if test="channel != null">
+        channel,
+      </if>
+      <if test="userAddressId != null">
+        user_address_id,
+      </if>
+      <if test="techParnterId != null">
+        tech_parnter_id,
+      </if>
+      <if test="subOrderNum != null">
+        sub_order_num,
+      </if>
+      <if test="orderRoute != null">
+        order_route,
+      </if>
+      <if test="disaccount != null">
+        disaccount,
+      </if>
+      <if test="invoiceId != null">
+        invoice_id,
+      </if>
+      <if test="priceChannelId != null">
+        price_channel_id,
+      </if>
+      <if test="batchNo != null">
+        batch_no,
+      </if>
+      <if test="pidCode != null">
+        pid_code,
+      </if>
+      <if test="sellerSettingsId != null">
+        seller_settings_id,
+      </if>
+      <if test="settleAccountsStatus != null">
+        settle_accounts_status,
+      </if>
+      <if test="extAdditionalInfo != null">
+        ext_additional_info,
+      </if>
+      <if test="orderExpressInfoId != null">
+        order_express_info_id,
+      </if>
+      <if test="orderCostStatus != null">
+        order_cost_status,
+      </if>
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="guid != null">
+        guid,
+      </if>
+      <if test="payMethod != null">
+        pay_method,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="maindataCreateTime != null">
+        maindata_create_time,
+      </if>
+      <if test="maindataUpdateTime != null">
+        maindata_update_time,
+      </if>
+      <if test="isDel != null">
+        is_del,
+      </if>
+      <if test="dataSource != null">
+        data_source,
+      </if>
+      <if test="mainOrderStatus != null">
+        main_order_status,
+      </if>
+      <if test="jiaReturnMoneyState != null">
+        jia_return_money_state,
+      </if>
+      <if test="jiaApproveState != null">
+        jia_approve_state,
+      </if>
+      <if test="platformId != null">
+        platform_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="maindataId != null">
+        #{maindataId,jdbcType=VARCHAR},
+      </if>
+      <if test="dbSource != null">
+        #{dbSource,jdbcType=BIGINT},
+      </if>
+      <if test="oraId != null">
+        #{oraId,jdbcType=BIGINT},
+      </if>
+      <if test="oraSubId != null">
+        #{oraSubId,jdbcType=BIGINT},
+      </if>
+      <if test="orderId != null">
+        #{orderId,jdbcType=VARCHAR},
+      </if>
+      <if test="businessId != null">
+        #{businessId,jdbcType=BIGINT},
+      </if>
+      <if test="sellerId != null">
+        #{sellerId,jdbcType=INTEGER},
+      </if>
+      <if test="orderType != null">
+        #{orderType,jdbcType=INTEGER},
+      </if>
+      <if test="paymentType != null">
+        #{paymentType,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null">
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="orderCreateTime != null">
+        #{orderCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="expirationTime != null">
+        #{expirationTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="paymentConfirmTime != null">
+        #{paymentConfirmTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderOutboundTime != null">
+        #{orderOutboundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderCompleteTime != null">
+        #{orderCompleteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderClosedTime != null">
+        #{orderClosedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderRemark != null">
+        #{orderRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="orderSum != null">
+        #{orderSum,jdbcType=DECIMAL},
+      </if>
+      <if test="couponSum != null">
+        #{couponSum,jdbcType=DECIMAL},
+      </if>
+      <if test="shouldPay != null">
+        #{shouldPay,jdbcType=DECIMAL},
+      </if>
+      <if test="freightSum != null">
+        #{freightSum,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="orderSource != null">
+        #{orderSource,jdbcType=VARCHAR},
+      </if>
+      <if test="externalOrderId != null">
+        #{externalOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="partnerId != null">
+        #{partnerId,jdbcType=BIGINT},
+      </if>
+      <if test="refundStatus != null">
+        #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="finalPay != null">
+        #{finalPay,jdbcType=DECIMAL},
+      </if>
+      <if test="sellerName != null">
+        #{sellerName,jdbcType=VARCHAR},
+      </if>
+      <if test="subOrderType != null">
+        #{subOrderType,jdbcType=INTEGER},
+      </if>
+      <if test="totalSum != null">
+        #{totalSum,jdbcType=DECIMAL},
+      </if>
+      <if test="parentOrderId != null">
+        #{parentOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="originOrderId != null">
+        #{originOrderId,jdbcType=VARCHAR},
+      </if>
+      <if test="consNameEncrypt != null">
+        #{consNameEncrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="consAddressEncrypt != null">
+        #{consAddressEncrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="consPhoneEncrypt != null">
+        #{consPhoneEncrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="consNameHash != null">
+        #{consNameHash,jdbcType=VARCHAR},
+      </if>
+      <if test="consAddressHash != null">
+        #{consAddressHash,jdbcType=VARCHAR},
+      </if>
+      <if test="consPhoneHash != null">
+        #{consPhoneHash,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardEncrypt != null">
+        #{idCardEncrypt,jdbcType=VARCHAR},
+      </if>
+      <if test="idCardHash != null">
+        #{idCardHash,jdbcType=VARCHAR},
+      </if>
+      <if test="extendStatus != null">
+        #{extendStatus,jdbcType=INTEGER},
+      </if>
+      <if test="buyerid != null">
+        #{buyerid,jdbcType=INTEGER},
+      </if>
+      <if test="idcode != null">
+        #{idcode,jdbcType=VARCHAR},
+      </if>
+      <if test="payTradeNo != null">
+        #{payTradeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="additionalInfo != null">
+        #{additionalInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="channel != null">
+        #{channel,jdbcType=VARCHAR},
+      </if>
+      <if test="userAddressId != null">
+        #{userAddressId,jdbcType=INTEGER},
+      </if>
+      <if test="techParnterId != null">
+        #{techParnterId,jdbcType=INTEGER},
+      </if>
+      <if test="subOrderNum != null">
+        #{subOrderNum,jdbcType=INTEGER},
+      </if>
+      <if test="orderRoute != null">
+        #{orderRoute,jdbcType=VARCHAR},
+      </if>
+      <if test="disaccount != null">
+        #{disaccount,jdbcType=INTEGER},
+      </if>
+      <if test="invoiceId != null">
+        #{invoiceId,jdbcType=INTEGER},
+      </if>
+      <if test="priceChannelId != null">
+        #{priceChannelId,jdbcType=INTEGER},
+      </if>
+      <if test="batchNo != null">
+        #{batchNo,jdbcType=VARCHAR},
+      </if>
+      <if test="pidCode != null">
+        #{pidCode,jdbcType=VARCHAR},
+      </if>
+      <if test="sellerSettingsId != null">
+        #{sellerSettingsId,jdbcType=INTEGER},
+      </if>
+      <if test="settleAccountsStatus != null">
+        #{settleAccountsStatus,jdbcType=INTEGER},
+      </if>
+      <if test="extAdditionalInfo != null">
+        #{extAdditionalInfo,jdbcType=VARCHAR},
+      </if>
+      <if test="orderExpressInfoId != null">
+        #{orderExpressInfoId,jdbcType=INTEGER},
+      </if>
+      <if test="orderCostStatus != null">
+        #{orderCostStatus,jdbcType=INTEGER},
+      </if>
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="guid != null">
+        #{guid,jdbcType=VARCHAR},
+      </if>
+      <if test="payMethod != null">
+        #{payMethod,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maindataCreateTime != null">
+        #{maindataCreateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="maindataUpdateTime != null">
+        #{maindataUpdateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isDel != null">
+        #{isDel,jdbcType=INTEGER},
+      </if>
+      <if test="dataSource != null">
+        #{dataSource,jdbcType=INTEGER},
+      </if>
+      <if test="mainOrderStatus != null">
+        #{mainOrderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="jiaReturnMoneyState != null">
+        #{jiaReturnMoneyState,jdbcType=INTEGER},
+      </if>
+      <if test="jiaApproveState != null">
+        #{jiaApproveState,jdbcType=INTEGER},
+      </if>
+      <if test="platformId != null">
+        #{platformId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateSelectiveById" parameterType="com.funny.trade.domain.order.entity.OrderDataEntity">
+    update order_data
+    <set>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="paymentConfirmTime != null">
+        payment_confirm_time = #{paymentConfirmTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderOutboundTime != null">
+        order_outbound_time = #{orderOutboundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderCompleteTime != null">
+        order_complete_time = #{orderCompleteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderClosedTime != null">
+        order_closed_time = #{orderClosedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderRemark != null">
+        order_remark = #{orderRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+
+
+  <select id="findEntityById" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from order_data
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="listByCondition" parameterType="com.funny.trade.domain.order.entity.OrderDataEntity" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM order_data where 1 = 1
+  </select>
+  <select id="count" parameterType="com.funny.trade.domain.order.entity.OrderDataEntity" resultMap="BaseResultMap">
+    SELECT count(1) FROM order_data where 1 = 1
+  </select>
+
+  <select id="findByOrderId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from order_data
+    where order_id = #{orderId,jdbcType=VARCHAR}
+  </select>
+
+  <update id="updateOrderStatusByOrderId" parameterType="com.funny.trade.domain.order.entity.OrderDataEntity">
+    update order_data
+    <set>
+      <if test="orderStatus != null">
+        order_status = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="refundStatus != null">
+        refund_status = #{refundStatus,jdbcType=INTEGER},
+      </if>
+      <if test="isDelete != null">
+        is_delete = #{isDelete,jdbcType=INTEGER},
+      </if>
+      <if test="paymentConfirmTime != null">
+        payment_confirm_time = #{paymentConfirmTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderOutboundTime != null">
+        order_outbound_time = #{orderOutboundTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderCompleteTime != null">
+        order_complete_time = #{orderCompleteTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderClosedTime != null">
+        order_closed_time = #{orderClosedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orderRemark != null">
+        order_remark = #{orderRemark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where order_id = #{orderId,jdbcType=VARCHAR}
+  </update>
+</mapper>

@@ -8,11 +8,16 @@
 	</parent>
 	<artifactId>trade-domain</artifactId>
 	<version>${trade-center.version}</version>
+	<packaging>jar</packaging>
 	<dependencies>
 		<!-- COLA Framework -->
 		<dependency>
 			<groupId>com.funny.combo</groupId>
 			<artifactId>combo-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.funny.combo</groupId>
+			<artifactId>combo-event</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.funny.combo</groupId>
@@ -34,6 +39,11 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+			<version>5.3.7</version>
 		</dependency>
 	</dependencies>
 

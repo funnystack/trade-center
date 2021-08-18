@@ -8,16 +8,16 @@
 	</parent>
 	<artifactId>trade-infrastructure</artifactId>
 	<version>${trade-center.version}</version>
+	<packaging>jar</packaging>
 	<dependencies>
 		<!--DIP here, Infrastructure depends on Domain-->
 		<dependency>
 			<groupId>com.funny.trade</groupId>
-			<artifactId>trade-domain</artifactId>
+			<artifactId>trade-client</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>org.mybatis.spring.boot</groupId>
-			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<groupId>com.funny.trade</groupId>
+			<artifactId>trade-domain</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.funny.combo</groupId>
@@ -26,6 +26,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.20</version>
 		</dependency>
 		<dependency>
 			<groupId>redis.clients</groupId>
@@ -43,16 +44,26 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+		</dependency>
+
+
     </dependencies>
 
 	<build>

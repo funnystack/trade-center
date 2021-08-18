@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd" default-autowire="byName">
+
+    <dubbo:application name="${spring.application.name}" owner="funny" organization="funny" >
+        <dubbo:parameter key="qos.enable" value="false"/>
+    </dubbo:application>
+
+    <dubbo:registry address="${dubbo.register}" />
+    <dubbo:protocol name="dubbo" port="-1"/> <!--协议类型-->
+
+
+    <dubbo:service interface="com.funny.trade.client.api.user.UserDubboService" ref="userDubboService" protocol="dubbo"
+                   group="${dubbo.group.user}" delay="-1" retries="0" timeout="30000" />
+
+</beans>

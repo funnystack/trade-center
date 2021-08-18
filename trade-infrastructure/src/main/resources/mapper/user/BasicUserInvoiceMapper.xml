@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.funny.trade.gatewayimpl.database.user.UserInvoiceMapper">
+<mapper namespace="com.funny.trade.infra.persistence.mapper.user.UserInvoiceMapper">
   <sql id="Base_Column_List">
     id, user_id, invoice_title, invoice_title_type, invoice_type, tax_payer_code, register_address, 
     register_mobile, bank_account, bank_name, receive_email_encrypt, receive_mobile_encrypt, 

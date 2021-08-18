@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funny.trade.infra.persistence.mapper.order.OrderOperateLogMapper">
+
+    <resultMap id="BaseResultMap" type="com.funny.trade.domain.order.entity.OrderOperateLogEntity">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="order_id" jdbcType="BIGINT" property="orderId" />
+        <result column="content" jdbcType="VARCHAR" property="content" />
+        <result column="operate_type" jdbcType="INTEGER" property="operateType" />
+        <result column="operate_flag" jdbcType="INTEGER" property="operateFlag" />
+        <result column="system_id" jdbcType="VARCHAR" property="systemId" />
+        <result column="system_ip" jdbcType="VARCHAR" property="systemIp" />
+        <result column="created_time" jdbcType="TIMESTAMP" property="gmtCreated" />
+        <result column="modified_time" jdbcType="TIMESTAMP" property="gmtModified" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, order_id, content, operate_type, operate_flag, system_id, system_ip, created_time,
+        modified_time, remark
+    </sql>
+
+    <insert id="insertSelective" parameterType="com.funny.trade.domain.order.entity.OrderOperateLogEntity">
+        <selectKey keyProperty="id" resultType="java.lang.Long" order="AFTER">
+            select LAST_INSERT_ID()
+        </selectKey>
+        insert into order_operate_log
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderId != null" >
+                order_id,
+            </if>
+            <if test="content != null" >
+                content,
+            </if>
+            <if test="operateType != null" >
+                operate_type,
+            </if>
+            <if test="operateFlag != null" >
+                operate_flag,
+            </if>
+            <if test="systemId != null" >
+                system_id,
+            </if>
+            <if test="systemIp != null">
+                system_ip,
+            </if>
+            <if test="gmtCreated != null">
+                created_time,
+            </if>
+            <if test="gmtModified != null">
+                modified_time,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+        </trim>
+        <trim prefix=" values (" suffix=")" suffixOverrides=",">
+            <if test="orderId != null" >
+                #{orderId},
+            </if>
+            <if test="content != null" >
+                #{content},
+            </if>
+            <if test="operateType != null" >
+                #{operateType},
+            </if>
+            <if test="operateFlag != null" >
+                #{operateFlag},
+            </if>
+            <if test="systemId != null" >
+                #{systemId},
+            </if>
+            <if test="systemIp != null">
+                #{systemIp},
+            </if>
+            <if test="gmtCreated != null">
+                #{gmtCreated},
+            </if>
+            <if test="gmtModified != null">
+                #{gmtModified},
+            </if>
+            <if test="remark != null">
+                #{remark},
+            </if>
+        </trim>
+    </insert>
+</mapper>

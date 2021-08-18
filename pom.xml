@@ -26,7 +26,7 @@
         <module>trade-app</module>
         <module>trade-domain</module>
         <module>trade-infrastructure</module>
-        <module>trade-order-starter</module>
+        <module>trade-starter</module>
     </modules>
 
     <dependencyManagement>
@@ -64,6 +64,11 @@
             <dependency>
                 <groupId>com.funny.combo</groupId>
                 <artifactId>combo-encrypt-starter</artifactId>
+                <version>${combo.framework.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.funny.combo</groupId>
+                <artifactId>combo-event</artifactId>
                 <version>${combo.framework.version}</version>
             </dependency>
             <dependency>
@@ -137,7 +142,7 @@
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
-                <version>1.2.70</version>
+                <version>1.2.75</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.dubbo</groupId>

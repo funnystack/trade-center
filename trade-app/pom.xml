@@ -10,11 +10,8 @@
 	<artifactId>trade-app</artifactId>
 	<version>${trade-center.version}</version>
 	<name>${project.artifactId}</name>
+	<packaging>jar</packaging>
 	<dependencies>
-		<dependency>
-			<groupId>com.funny.trade</groupId>
-			<artifactId>trade-domain</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>com.funny.trade</groupId>
 			<artifactId>trade-infrastructure</artifactId>
@@ -32,7 +29,6 @@
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>javax.el</artifactId>
 		</dependency>
-		<!-- JSR 303 Validation End-->
 	</dependencies>
 
 	<build>

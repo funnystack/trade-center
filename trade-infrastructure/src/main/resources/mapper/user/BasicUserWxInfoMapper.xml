@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.funny.trade.gatewayimpl.database.user.UserWxInfoMapper">
+<mapper namespace="com.funny.trade.infra.persistence.mapper.user.UserWxInfoMapper">
   <sql id="Base_Column_List">
     id, user_id, open_id, union_id, wx_phone, wx_nick_name, wx_gender, wx_country, wx_city, 
     wx_province, wx_avatar_url, gmt_created, gmt_modified, is_del
