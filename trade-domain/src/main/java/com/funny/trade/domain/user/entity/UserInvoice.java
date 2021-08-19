@@ -1,6 +1,6 @@
 package com.funny.trade.domain.user.entity;
 
-import com.funny.combo.core.annotion.Domain;
+import com.funny.combo.core.ddd.annotion.Domain;
 
 @Domain(code = "user.invoice", parentCode = "user",name = "用户发票域")
 public class UserInvoice extends UserInvoiceEntity {

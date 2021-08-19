@@ -1,6 +1,6 @@
 package com.funny.trade.domain.order.event;
 
-import com.funny.combo.event.DomainEventI;
+import com.funny.combo.core.event.DomainEventI;
 import com.funny.trade.domain.order.enums.OrderEventEnum;
 import lombok.Data;
 

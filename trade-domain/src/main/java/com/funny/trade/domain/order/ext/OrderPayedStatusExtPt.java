@@ -1,6 +1,6 @@
 package com.funny.trade.domain.order.ext;
 
-import com.funny.combo.extension.ExtensionPointI;
+import com.funny.combo.core.extension.ExtensionPointI;
 import com.funny.trade.domain.order.entity.OrderDataEntity;
 
 public interface OrderPayedStatusExtPt extends ExtensionPointI {

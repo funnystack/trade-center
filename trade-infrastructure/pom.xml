@@ -21,7 +21,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.funny.combo</groupId>
-			<artifactId>combo-encrypt-starter</artifactId>
+			<artifactId>combo-encrypt</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>

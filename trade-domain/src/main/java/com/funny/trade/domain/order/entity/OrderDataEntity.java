@@ -2,9 +2,9 @@ package com.funny.trade.domain.order.entity;
 
 
 import com.funny.combo.core.base.BaseEntity;
-import com.funny.combo.core.common.ApplicationContextHelper;
-import com.funny.combo.extension.BizScenario;
-import com.funny.combo.extension.ExtensionExecutor;
+import com.funny.combo.core.context.ApplicationContextHelper;
+import com.funny.combo.core.extension.BizScenario;
+import com.funny.combo.core.extension.ExtensionExecutor;
 import com.funny.trade.domain.order.entity.valueobject.OrderItemEntity;
 import com.funny.trade.domain.order.enums.OrderStatusEnum;
 import com.funny.trade.domain.order.ext.OrderPayedStatusExtPt;
@@ -229,7 +229,7 @@ public class OrderDataEntity extends BaseEntity {
 
     public OrderDataEntity payed() {
         ExtensionExecutor extensionExecutor = ApplicationContextHelper.getBean(ExtensionExecutor.class);
-        return extensionExecutor.execute(OrderPayedStatusExtPt.class,BizScenario.valueOf(getDbSource() + "", getBusinessId() + "", getOrderRoute()),
+        return extensionExecutor.execute(OrderPayedStatusExtPt.class, BizScenario.valueOf(getDbSource() + "", getBusinessId() + "", getOrderRoute()),
                 ex -> ex.updateOrderPayStatus(this));
     }
 

@@ -15,14 +15,7 @@
 			<groupId>com.funny.combo</groupId>
 			<artifactId>combo-core</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>com.funny.combo</groupId>
-			<artifactId>combo-event</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.funny.combo</groupId>
-			<artifactId>combo-extension-starter</artifactId>
-		</dependency>
+
 		<dependency>
 			<groupId>com.funny.trade</groupId>
 			<artifactId>trade-client</artifactId>

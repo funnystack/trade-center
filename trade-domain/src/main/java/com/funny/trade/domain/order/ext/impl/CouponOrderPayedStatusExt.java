@@ -1,6 +1,6 @@
 package com.funny.trade.domain.order.ext.impl;
 
-import com.funny.combo.extension.Extension;
+import com.funny.combo.core.extension.Extension;
 import com.funny.trade.domain.order.entity.OrderDataEntity;
 import com.funny.trade.domain.order.enums.OrderStatusEnum;
 import com.funny.trade.domain.order.ext.OrderPayedStatusExtPt;

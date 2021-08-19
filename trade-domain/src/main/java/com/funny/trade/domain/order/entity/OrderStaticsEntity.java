@@ -1,12 +1,9 @@
 package com.funny.trade.domain.order.entity;
 
 
-import com.funny.combo.core.annotion.Entity;
 import com.funny.combo.core.base.BaseEntity;
+import com.funny.combo.core.ddd.annotion.Entity;
 import lombok.Data;
-
-import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * 订单统计信息

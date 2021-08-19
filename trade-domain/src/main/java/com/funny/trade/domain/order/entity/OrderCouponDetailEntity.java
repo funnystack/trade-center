@@ -1,7 +1,7 @@
 package com.funny.trade.domain.order.entity;
 
-import com.funny.combo.core.annotion.Entity;
 import com.funny.combo.core.base.BaseEntity;
+import com.funny.combo.core.ddd.annotion.Entity;
 import com.funny.trade.domain.order.enums.AmountTypeEnum;
 import com.funny.trade.domain.order.enums.CouponTypeEnum;
 import lombok.Data;

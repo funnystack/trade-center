@@ -1,7 +1,7 @@
 package com.funny.trade.domain.user.entity;
 
-import com.funny.combo.core.annotion.Entity;
 import com.funny.combo.core.base.BaseEntity;
+import com.funny.combo.core.ddd.annotion.Entity;
 
 @Entity
 public class UserInfoEntity extends BaseEntity {

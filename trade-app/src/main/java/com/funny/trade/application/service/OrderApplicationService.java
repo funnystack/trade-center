@@ -1,7 +1,7 @@
 package com.funny.trade.application.service;
 
+import com.funny.combo.core.event.EventBusI;
 import com.funny.combo.core.result.SingleResponse;
-import com.funny.combo.event.EventBusI;
 import com.funny.trade.client.dto.item.ItemDTO;
 import com.funny.trade.client.dto.item.QueryItemParam;
 import com.funny.trade.client.dto.order.ReceiveOrderDTO;

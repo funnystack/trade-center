@@ -1,8 +1,8 @@
 package com.funny.trade.infra.eventhandler;
 
+import com.funny.combo.core.event.EventHandler;
+import com.funny.combo.core.event.EventHandlerI;
 import com.funny.combo.core.result.Response;
-import com.funny.combo.event.EventHandler;
-import com.funny.combo.event.EventHandlerI;
 import com.funny.trade.domain.order.event.OrderEvent;
 
 @EventHandler
